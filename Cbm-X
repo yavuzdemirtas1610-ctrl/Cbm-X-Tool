@@ -1,0 +1,168 @@
+import os
+import sys
+import time
+import random
+
+def clear():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+def check_password():
+    clear()
+    print("=" * 40)
+    print("        Cbm-X SECURITY LOGIN")
+    print("=" * 40)
+    pwd = input("Enter Password: ")
+    if pwd == "Cbm-X":
+        print("\nAccess Granted! Loading Cbm-X...")
+        time.sleep(1.5)
+    else:
+        print("\nAccess Denied! Incorrect Password.")
+        sys.exit()
+
+def main_menu():
+    while True:
+        clear()
+        print("┌────────────────────────────────────────┐")
+        print("│                 Cbm-X                  │")
+        print("└────────────────────────────────────────┘")
+        print()
+        print(" (1) SMS Spam")
+        print(" (2) Calling Spam")
+        print(" (3) Message Spam")
+        print(" (4) Hack Wifi")
+        print(" (5) Pizza Spam")
+        print(" (6) Finding A Home")
+        print(" (7) Hack Phone")
+        print(" (8) Reset")
+        print(" (9) How It Works")
+        print("(10) Quit")
+        print()
+        
+        choice = input("Enter choice (1-10): ").strip()
+        
+        if choice == '1':
+            sms_spam()
+        elif choice == '2':
+            calling_spam()
+        elif choice == '3':
+            message_spam()
+        elif choice == '4':
+            hack_wifi()
+        elif choice == '5':
+            pizza_spam()
+        elif choice == '6':
+            finding_a_home()
+        elif choice == '7':
+            hack_phone()
+        elif choice == '8':
+            reset_screen()
+        elif choice == '9':
+            how_it_works()
+        elif choice == '10':
+            clear()
+            print("Exiting Cbm-X. Goodbye!")
+            sys.exit()
+        else:
+            input("\n[!] Invalid choice! Press Enter to try again...")
+
+def sms_spam():
+    clear()
+    print("=== Cbm-X : SMS Spam ===")
+    country_code = input("Enter country code (e.g. +1, +90): ")
+    phone = input("Enter phone number: ")
+    print("\n[~] Connecting to gateway...")
+    time.sleep(1)
+    print("[~] Sending bulk SMS...")
+    for i in range(1, 6):
+        print(f"-> SMS #{i} sent successfully.")
+        time.sleep(0.3)
+    input("\n[✓] Operation completed successfully! Press Enter to go back.")
+
+def calling_spam():
+    clear()
+    print("=== Cbm-X : Calling Spam ===")
+    country_code = input("Enter country code (e.g. +1, +90): ")
+    phone = input("Enter phone number: ")
+    print(f"\n[~] Initiating continuous calls to {country_code} {phone}...")
+    for i in range(1, 6):
+        print(f"-> Calling... Ringing ({i})")
+        time.sleep(0.6)
+    input("\n[✓] Target phone is overwhelmed! Press Enter to go back.")
+
+def message_spam():
+    clear()
+    print("=== Cbm-X : WhatsApp Message Spam ===")
+    country_code = input("Enter country code (e.g. +1, +90): ")
+    phone = input("Enter phone number: ")
+    print("\n[~] Opening WhatsApp Web Socket...")
+    time.sleep(1)
+    for i in range(1, 8):
+        print(f"-> WhatsApp Message #{i}: 'Hello from Cbm-X!' sent.")
+        time.sleep(0.2)
+    input("\n[✓] Message spam completed! Press Enter to go back.")
+
+def hack_wifi():
+    clear()
+    print("=== Cbm-X : Hack Wifi ===")
+    wifi_name = input("Enter target Wi-Fi name (SSID): ")
+    print(f"\n[~] Analyzing packets for '{wifi_name}'...")
+    time.sleep(1.5)
+    print("[~] Brute-forcing WPA2 handshake...")
+    time.sleep(2)
+    fake_pass = f"CbmX_{random.randint(1000, 9999)}!#"
+    print(f"\n[SUCCESS] Wi-Fi Hacked!")
+    print(f"Network: {wifi_name}")
+    print(f"Generated Password: {fake_pass} (Just a prank bro!)")
+    input("\nPress Enter to go back.")
+
+def pizza_spam():
+    clear()
+    print("=== Cbm-X : Pizza Spam ===")
+    target_address = input("Enter target address/location: ")
+    print(f"\n[~] Connecting to local pizza delivery chains near: {target_address}")
+    time.sleep(1)
+    print("[~] Ordering 10 Large Pepperoni Pizzas (Cash on Delivery)...")
+    time.sleep(1.5)
+    input("\n[✓] Pizzas are on the way to the target! Press Enter to go back.")
+
+def finding_a_home():
+    clear()
+    print("=== Cbm-X : Finding A Home ===")
+    name = input("Enter person's name: ")
+    print(f"\n[~] Accessing global satellite imagery & tax records for '{name}'...")
+    time.sleep(2)
+    streets = ["Maple Street", "Oak Avenue", "Sunset Boulevard", "Liberty Square", "Pine Hill Road"]
+    house_num = random.randint(10, 999)
+    print(f"\n[FOUND] Target Address:")
+    print(f"-> {house_num} {random.choice(streets)}, Apt {random.randint(1, 15)}")
+    input("\nPress Enter to go back.")
+
+def hack_phone():
+    clear()
+    print("=== Cbm-X : Hack Phone ===")
+    name = input("Enter victim's name: ")
+    print(f"\n[~] Searching for active devices registered to '{name}'...")
+    time.sleep(1.5)
+    print("[~] Injecting payload via remote exploit...")
+    time.sleep(2)
+    print(f"\n[SUCCESS] Phone locked successfully! Screen message changed to: 'Hacked by Cbm-X 😈'")
+    input("\nPress Enter to go back.")
+
+def reset_screen():
+    print("\n[~] Refreshing Cbm-X interface...")
+    time.sleep(1)
+    # Ana döngü temiz bir şekilde ekranı yenileyecek
+
+def how_it_works():
+    clear()
+    print("=== Cbm-X : How It Works ===")
+    print("Welcome to Cbm-X, the ultimate fictional prank tool.")
+    print("1. All modules in this tool are designed for simulation and entertainment.")
+    print("2. No real servers, networks, or databases are actually harmed or hacked.")
+    print("3. Everything runs locally inside your terminal using Python logic.")
+    print("4. Enjoy harmless fun with your friends!")
+    input("\nPress Enter to go back to the menu.")
+
+if __name__ == "__main__":
+    check_password()
+    main_menu()
